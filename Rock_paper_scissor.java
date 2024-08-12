@@ -61,6 +61,9 @@ public class Rock_paper_scissor {
         else if(you_win<comp_win){
             System.out.println("Computer won the game, try again");
         }
+        else if (you_win == comp_win){
+            System.out.println("Tie, try again");
+        }
 
     }
 }

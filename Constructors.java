@@ -54,10 +54,9 @@ public class Constructors {
         Employee_constructor emp1 = new Employee_constructor(5965);
 
         // emp1.setID(20912);
-        System.out.println("ID --> " + emp1.getID());
+        System.out.printf("ID --> %d \n", emp1.getID());
         
         // emp1.setName("John");
         System.out.println("Name --> " + emp1.getName());
-        
     }
 }
