@@ -39,6 +39,5 @@ public class practiceSheet_3 {
 
         System.out.println("The length of rect3 are: " + rect3.getLength());
         System.out.println("The breadth of rect3 are: " + rect3.getBreadth());
-
     }
 }
