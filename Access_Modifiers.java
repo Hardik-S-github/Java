@@ -1,3 +1,10 @@
+// Different types of Access Modifiers are :-
+//    1. Private 
+//    2. Public 
+//    3. Protected
+//    4. Default
+
+
 class Myemp{
     private int id;
     private String name;
