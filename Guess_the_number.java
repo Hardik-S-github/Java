@@ -1,40 +1,54 @@
-import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
 
-class game{
-    private int num;
-    private int numberOfGuesses = 0;
-    public game(){
+class Game{
+    public int num_gen;
+    public int ip;
+    public int number_of_guesses = 0;
+
+    public void setNumber_of_guesses(int number_of_guesses) {
+        this.number_of_guesses = number_of_guesses;
+    }
+
+    public int getNumber_of_guesses() {
+        return number_of_guesses;
+    }
+
+    Game(){
         Random rdm = new Random();
-        num = rdm.nextInt(10);
+        System.out.println("Generating number..");
+        this.num_gen = rdm.nextInt(0,100);
     }
 
-    public int takeUserInput(){
+    void user_input(){
+        System.out.println("Enter the number: ");
         Scanner sc = new Scanner(System.in);
-        int input = sc.nextInt();
-        return input;
+        ip = sc.nextInt();
     }
 
-    public void isCorrectNumber(int n){
-        if(n<num){
-            System.out.println("Choose a higher number");
-            numberOfGuesses++;
+    boolean is_correct(){
+        number_of_guesses++;
+        if(ip==num_gen){
+            System.out.printf("You got it, it was %d\nGuessed in %d attempts",num_gen, number_of_guesses);
+            return true;
         }
-        
-        else if(n>num){
-            System.out.println("Choose a lower number");
-            numberOfGuesses++;
+        else if(ip<num_gen){
+            System.out.println("Too low, try for a higher number");
         }
-        
-        else if(n==num){
-            System.out.println("Good job! You won");
-            numberOfGuesses++;
+        else if(ip>num_gen){
+            System.out.println("Too high, try for a lower number");
         }
+        return false;
     }
 }
 
 public class Guess_the_number {
     public static void main(String[] args) {
-        game 
+        Game g = new Game();
+        boolean b = false;
+        while(!b){
+            g.user_input();
+            b = g.is_correct();
+        }
     }   
 }
